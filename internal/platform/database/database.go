@@ -8,11 +8,11 @@ import (
 
 // Config is the required properties to use the database.
 type Config struct {
-	User       string
-	Password   string
-	Host       string
-	Name       string
-	DisableTLS bool
+	User       string `mapstructure:"user"`
+	Password   string `mapstructure:"password"`
+	Host       string `mapstructure:"host"`
+	Name       string `mapstructure:"name"`
+	DisableTLS bool `mapstructure:"tls"`
 }
 
 // Open knows how to open a database connection based on the configuration.
