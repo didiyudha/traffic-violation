@@ -1,6 +1,9 @@
 package model
 
-import "time"
+import (
+	"github.com/google/uuid"
+	"time"
+)
 
 // Citizen model.
 type Citizen struct {
@@ -37,4 +40,38 @@ type CitizenAddress struct {
 	CreatedAt    time.Time  `db:"created_at"`
 	UpdateAt     time.Time  `db:"updated_at"`
 	DeletedAt    *time.Time `db:"deleted_at"`
+}
+
+type STNK struct {
+	ID              uint64     `db:"id" json:"-"`
+	UUID            uuid.UUID  `db:"uuid" json:"id"`
+	Code            string     `db:"code" json:"code"`
+	PoliceNumber    string     `db:"police_number" json:"police_number"`
+	OwnerName       string     `db:"owner_name" json:"owner_name"`
+	Address         string     `db:"address" json:"address"`
+	Type            string     `db:"stnk_type" json:"type"`
+	Model           string     `db:"model" json:"model"`
+	AssembledAt     time.Time  `db:"assembled_at" json:"assembled_at"`
+	Color           string     `db:"color" json:"color"`
+	CentimeterCubic string     `db:"centimeter_cubic" json:"centimeter_cubic"`
+	ChasisCode      string     `db:"chasis_code" json:"chasis_code"`
+	MachineCode     string     `db:"machine_code" json:"machine_code"`
+	CreatedAt       time.Time  `db:"created_at" json:"created_at"`
+	UpdateAt        time.Time  `db:"updated_at" json:"update_at"`
+	DeletedAt       *time.Time `db:"deleted_at" json:"deleted_at"`
+}
+
+type BPKB struct {
+	ID              uint64     `db:"id" json:"-"`
+	UUID            uuid.UUID  `db:"uuid" json:"id"`
+	Code            string     `db:"code" json:"code"`
+	PoliceNumber    string     `db:"police_number" json:"police_number"`
+	CreatedYear     string     `db:"created_year" json:"created_year"`
+	AssembledAt     time.Time  `db:"assembled_at" json:"assembled_at"`
+	Color           string     `db:"color" json:"color"`
+	Type            string     `db:"stnk_type" json:"type"`
+	CentimeterCubic string     `db:"centimeter_cubic" json:"centimeter_cubic"`
+	CreatedAt       time.Time  `db:"created_at" json:"created_at"`
+	UpdateAt        time.Time  `db:"updated_at" json:"update_at"`
+	DeletedAt       *time.Time `db:"deleted_at" json:"deleted_at"`
 }
