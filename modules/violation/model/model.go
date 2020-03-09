@@ -19,3 +19,9 @@ type Citizen struct {
 	UpdatedAt    time.Time  `db:"updated_at"`
 	DeletedAt    *time.Time `db:"deleted_at"`
 }
+
+type citizen_address struct {
+	ID        uint64 `db:"id" json:"-"`
+	UUID      string `db:"uuid" json:"id"`
+	CitizenID uint64 `db:"citizen_id"`
+}
